@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title ASimpleblog
+    = stylesheet_link_tag 'application'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags 
+
+
+  %body
+    = render 'layouts/navbar'
+    = yield
