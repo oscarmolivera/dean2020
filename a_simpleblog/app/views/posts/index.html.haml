@@ -1,0 +1,18 @@
+.container
+  .row
+    .digg_pagination
+      = will_paginate @posts, :container => false
+  - @posts.each do |post|
+    .row
+      .card.mb-3
+        %img.card-img-top{alt: "Blog Post Image Card", src: "#{url_for post.optimized_image(post.thumbnail, 586, 180)}"}/
+        .card-body
+          %h5.card-title
+            = link_to post.title, post
+          %p.card-text
+            = post.body.to_plain_text.truncate_words(50)
+          %p.card-text
+            %small.text-muted
+              = post.updated_at.strftime("%A, %B %e, %Y")
+              by
+              \#{post.user.username} | #{pluralize(post.views, "View")} | 0 comments

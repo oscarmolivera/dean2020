@@ -18,3 +18,6 @@ require("channels")
 import 'bootstrap';
 import './stylesheets/application.scss';
 global.$ = jQuery;
+
+require("trix")
+require("@rails/actiontext")

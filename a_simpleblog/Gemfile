@@ -14,8 +14,12 @@ ruby '2.6.2'
 gem 'bootsnap', '>= 1.4.2', require: false
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.7', '>= 4.7.1'
+# Slugging and permalink plugins for Active Record
+gem 'friendly_id', '~> 5.3'
 # HTML Abstraction Markup Language
 gem 'haml', '~> 5.1', '>= 5.1.2'
+# High-level wrapper for processing images for the web with ImageMagick or libvips.
+gem 'image_processing', '~> 1.10', '>= 1.10.3'
 # Build JSON APIs with ease.
 gem 'jbuilder', '~> 2.7'
 # Use Puma as the app server
@@ -32,10 +36,14 @@ gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Transpile app-like JavaScript.
 gem 'webpacker', '~> 4.0'
+# Simple API for performing paginated queries with Active Record, DataMapper and Sequel
+gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # Easily generate fake data: names, addresses, phone numbers, etc.
+  gem 'faker', '~> 2.11'
 end
 
 group :development do
