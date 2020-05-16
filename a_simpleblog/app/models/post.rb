@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many comments, as: :commentable, dependent: :destroy
 
   # Rails6 ActiveStorage
   has_one_attached :thumbnail

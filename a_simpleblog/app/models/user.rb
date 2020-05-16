@@ -4,7 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :comments, dependent: :destroy
+
   def username
     email.split('@').first.upcase
+  end
+
+  def comments_created
+    number_of_comments += 1
+    save
+    number_of_comments
   end
 end

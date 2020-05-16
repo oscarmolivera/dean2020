@@ -5,7 +5,7 @@ class CreateComments < ActiveRecord::Migration[6.0]
       t.integer :commentable_id
       t.string :commentable_type
       t.references :user, null: false, foreign_key: true
-      t.boolean :reply
+      t.boolean :reply, default: false
       t.integer :comment_number
 
       t.timestamps
